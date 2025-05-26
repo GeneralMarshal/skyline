@@ -1,6 +1,5 @@
 import SlideShow from './SlideShow';
-import { useState, useEffect } from 'react';
-import { Parallax, Background } from 'react-parallax';
+import { Parallax} from 'react-parallax';
 export default function LandingPage(){
     return(
         <main >
