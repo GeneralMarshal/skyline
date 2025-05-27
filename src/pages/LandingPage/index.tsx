@@ -74,7 +74,7 @@ export default function LandingPage(){
 
             {/* the golf guy */}
 
-            <div className=' flex h-[100vh] mb-[100vh] overflow-hidden'>
+            <div className=' flex h-[100vh] overflow-hidden p-12'>
                 <div className='flex-[40%] h-full rounded-xl overflow-hidden'>
                     <img className=' object-cover min-h-full min-w-full' src="/images/golfMan.png" alt="" />
                 </div>
@@ -84,6 +84,12 @@ export default function LandingPage(){
                     </p>
                     <p className=' w-[60%] text-xl'>The Skyline Towers provides the scenery of a metropolis nestled in the flare of GRA's historic affluent and green neighbourhood.</p>
                 </div>
+            </div>
+
+            {/* autoplay background video */}
+
+            <div className=' h-[100vh] mt-40 mb-12'>
+                <video className="object-cover w-full h-full" src="/videos/skyline-video.mp4" autoPlay muted loop></video>
             </div>
         </main>
             <Footer/>
