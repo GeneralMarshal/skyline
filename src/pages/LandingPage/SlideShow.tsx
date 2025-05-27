@@ -6,19 +6,19 @@ export default function SlideShow(){
         setShowImage(newImage)
     }
     return(
-        <section className="flex flex-col w-full h-[100vh] mb-[100px] gap-12 p-10 items-center">
-            <p className=" text-3xl font-[300] ">
+        <section className="flex flex-col w-full max-h-[100vh] mb-[100px] gap-10 p-10 items-center">
+            <p className="flex text-3xl font-[400] ">
                 UNIQUE BLEND OF EXCLUSIVITY AND TRANQUILITY
             </p>
-            <div className="flex  w-full items-start">
+            <div className="flex flex-1  w-full items-start">
                 <div className=" flex-[40%]">
                     <ul className="show-options leading-10">
-                        <li onMouseEnter={()=>handleImage("study")} className=" cursor-pointer w-32">STUDY</li>
-                        <li onMouseEnter={()=>handleImage("pool")} className=" cursor-pointer w-32" >SWIMMING POOL</li>
-                        <li onMouseEnter={()=>handleImage("playground")} className=" cursor-pointer w-32" >KIDS PLAYGROUND</li>
-                        <li onMouseEnter={()=>handleImage("gym")} className=" cursor-pointer w-32" >GYM</li>
-                        <li onMouseEnter={()=>handleImage("salon")} className=" cursor-pointer w-32" >SALON AND SPA</li>
-                        <li onMouseEnter={()=>handleImage("meeting")} className=" cursor-pointer w-32   " >MEETING ROOOM</li>
+                        <li onMouseEnter={()=>handleImage("study")} className=" cursor-pointer w-40">STUDY</li>
+                        <li onMouseEnter={()=>handleImage("pool")} className=" cursor-pointer w-40" >SWIMMING POOL</li>
+                        <li onMouseEnter={()=>handleImage("playground")} className=" cursor-pointer w-40" >KIDS PLAYGROUND</li>
+                        <li onMouseEnter={()=>handleImage("gym")} className=" cursor-pointer w-40" >GYM</li>
+                        <li onMouseEnter={()=>handleImage("salon")} className=" cursor-pointer w-40" >SALON AND SPA</li>
+                        <li onMouseEnter={()=>handleImage("meeting")} className=" cursor-pointer w-40   " >MEETING ROOOM</li>
 
                     </ul>
                 </div>

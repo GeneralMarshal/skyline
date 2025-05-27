@@ -1,7 +1,24 @@
 import SlideShow from './SlideShow';
 import { Parallax} from 'react-parallax';
+import { useEffect, useRef, useState } from "react";
 import Footer from './Footer';
 export default function LandingPage(){
+    const sectionRef = useRef(null)
+    const [inview, setInView] = useState(false)
+
+    useEffect(()=>{
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setInView(entry.isIntersecting)
+            },
+            {threshold: 0.6}
+        )
+
+        if(sectionRef.current) observer.observe(sectionRef.current)
+        return () =>{
+            if (sectionRef.current) observer.unobserve(sectionRef.current)
+        }
+    },[])
     return(
         <>
             <main>
@@ -25,7 +42,7 @@ export default function LandingPage(){
                  </h1>
              </div>
 
-            <div className="h-[100vh] w-full flex justify-center ">
+            <div ref={sectionRef} className={`transition-transform duration-700 ease-out w-full h-[100vh]  flex items-center justify-center ${inview ? "scale-110" : "scale-95"}`}>
                 <div className={` gap-8 p-12 w-[60%] h-[90%] flex`} >
                     <span className=" flex-[65%] overflow-hidden">
                         <img  className=" object-cover object-center min-h-full min-w-full " src="/images/TA penthouse 2 dry kitchen dining 1.png" alt="" />
@@ -41,14 +58,14 @@ export default function LandingPage(){
                 bgImageStyle={{objectFit: "cover", minWidth: "100%", minHeight: "100%", height: "auto"}}
             >
                 <div className="relative  flex w-full h-[100vh] overflow-hidden ">
-                    <span className='absolute right-0 text-[55px] text-white bottom-0 w-[40%] font-[300]'>
+                    <span className='absolute right-0 text-[55px] text-white bottom-0 w-[40%] font-[400]'>
                         REVEALNG A GEM NESTlED IN MODERNITY
                     </span>
                 </div>
             </Parallax>
 
             <p className='flex justify-center w-full py-[70px] text-3xl text-center font-[400]'>
-                <span className=' w-[70%] font-[300]' >
+                <span className=' w-[70%] font-[400]' >
                     BREATHTAKING CITY VIEWS AND SXPANSIVE CEILINGS GRACE EACH ROOM COMBINING SCALE WITH CONTEMPORARY LIVING
                 </span>
             </p>
@@ -79,7 +96,7 @@ export default function LandingPage(){
                     <img className=' object-cover min-h-full min-w-full' src="/images/golfMan.png" alt="" />
                 </div>
                 <div className='flex-[60%] flex flex-col items-center mt-10'>
-                    <p className=' text-3xl  w-[60%] mb-8'>
+                    <p className=' text-3xl font-[400] w-[60%] mb-8'>
                         A CELEBRATION OF THE HIGHEST STANDARDS OF LIVING
                     </p>
                     <p className=' w-[60%] text-xl'>The Skyline Towers provides the scenery of a metropolis nestled in the flare of GRA's historic affluent and green neighbourhood.</p>

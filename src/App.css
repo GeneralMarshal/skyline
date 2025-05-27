@@ -27,6 +27,7 @@
 
 .show-options li:hover{
     color: purple;
+    text-decoration: underline;
 }
 @keyframes fadeIn {
     from {
