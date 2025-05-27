@@ -7,18 +7,18 @@ export default function SlideShow(){
     }
     return(
         <section className="flex flex-col w-full h-[100vh] gap-12 p-10 items-center">
-            <p className=" text-3xl ">
+            <p className=" text-3xl font-[300] ">
                 UNIQUE BLEND OF EXCLUSIVITY AND TRANQUILITY
             </p>
             <div className="flex  w-full items-start">
                 <div className=" flex-[40%]">
-                    <ul className=" leading-10">
-                        <li onMouseEnter={()=>handleImage("study")} className=" cursor-pointer">STUDY</li>
-                        <li onMouseEnter={()=>handleImage("pool")} className=" cursor-pointer" >SWIMMING POOL</li>
-                        <li onMouseEnter={()=>handleImage("playground")} className=" cursor-pointer" >KIDS PLAYGROUND</li>
-                        <li onMouseEnter={()=>handleImage("gym")} className=" cursor-pointer" >GYM</li>
-                        <li onMouseEnter={()=>handleImage("salon")} className=" cursor-pointer" >SALON AND SPA</li>
-                        <li onMouseEnter={()=>handleImage("meeting")} className=" cursor-pointer" >MEETING ROOOM</li>
+                    <ul className="show-options leading-10">
+                        <li onMouseEnter={()=>handleImage("study")} className=" cursor-pointer w-32">STUDY</li>
+                        <li onMouseEnter={()=>handleImage("pool")} className=" cursor-pointer w-32" >SWIMMING POOL</li>
+                        <li onMouseEnter={()=>handleImage("playground")} className=" cursor-pointer w-32" >KIDS PLAYGROUND</li>
+                        <li onMouseEnter={()=>handleImage("gym")} className=" cursor-pointer w-32" >GYM</li>
+                        <li onMouseEnter={()=>handleImage("salon")} className=" cursor-pointer w-32" >SALON AND SPA</li>
+                        <li onMouseEnter={()=>handleImage("meeting")} className=" cursor-pointer w-32   " >MEETING ROOOM</li>
 
                     </ul>
                 </div>

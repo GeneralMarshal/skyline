@@ -1,12 +1,14 @@
 import SlideShow from './SlideShow';
 import { Parallax} from 'react-parallax';
+import Footer from './Footer';
 export default function LandingPage(){
     return(
-        <main >
+        <>
+            <main>
             <Parallax strength={300}
             bgImage="/images/street view 1.png" 
             bgImageStyle={{objectFit: "cover", minWidth: "100%", minHeight: "100%", height: "auto"}}
-        >
+            >
                 <div className="relative  flex w-full h-[100vh] overflow-hidden ">
 
                     <img 
@@ -18,7 +20,7 @@ export default function LandingPage(){
             </Parallax>
 
              <div className=" w-full px-10 py-10 h-[50vh] flex flex-col justify-center">
-                 <h1 className=" w-[70%] text-[64px] font-[400]">
+                 <h1 className=" w-[70%] text-[64px] font-[400] tracking-wider">
                      THE TALLEST RESIDENTIAL BUILDING IN IKEJA GRA
                  </h1>
              </div>
@@ -46,7 +48,7 @@ export default function LandingPage(){
             </Parallax>
 
             <p className='flex justify-center w-full py-[70px] text-3xl text-center font-[400]'>
-                <span className=' w-[70%]'>
+                <span className=' w-[70%] font-[300]' >
                     BREATHTAKING CITY VIEWS AND SXPANSIVE CEILINGS GRACE EACH ROOM COMBINING SCALE WITH CONTEMPORARY LIVING
                 </span>
             </p>
@@ -55,7 +57,7 @@ export default function LandingPage(){
                 <img className=' object-cover min-h-full min-w-full' src="/images/TA maissonetteliving room double volume 4.png" alt="" />
             </div>
 
-            <div className=' flex w-full h-[100vh] p-16 my-[100px] bg-amber-100 overflow-hidden'>
+            <div className=' flex w-full h-[100vh] p-16 my-[100px] bg-[#f0eeea] overflow-hidden'>
                 <div className='grid-layout grid flex-1 rounded-xl overflow-hidden'>
                     <div className='item-1'>
                         <img src="/images/TA maisonette master bathroom 1.png" alt="" />
@@ -72,17 +74,20 @@ export default function LandingPage(){
 
             {/* the golf guy */}
 
-            <div className=' flex h-[100vh]'>
-                <div className='flex-[40%] h-full'>
+            <div className=' flex h-[100vh] mb-[100vh] overflow-hidden'>
+                <div className='flex-[40%] h-full rounded-xl overflow-hidden'>
                     <img className=' object-cover min-h-full min-w-full' src="/images/golfMan.png" alt="" />
                 </div>
                 <div className='flex-[60%] flex flex-col items-center mt-10'>
-                    <p className=' text-3xl w-[60%] mb-8'>
+                    <p className=' text-3xl  w-[60%] mb-8'>
                         A CELEBRATION OF THE HIGHEST STANDARDS OF LIVING
                     </p>
                     <p className=' w-[60%] text-xl'>The Skyline Towers provides the scenery of a metropolis nestled in the flare of GRA's historic affluent and green neighbourhood.</p>
                 </div>
             </div>
         </main>
+            <Footer/>
+        </>
+            
     )
 }

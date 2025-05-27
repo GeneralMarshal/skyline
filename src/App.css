@@ -25,6 +25,9 @@
     animation: fadeIn 0.5s ease-in forwards;
 } 
 
+.show-options li:hover{
+    color: purple;
+}
 @keyframes fadeIn {
     from {
             opacity: 0;
