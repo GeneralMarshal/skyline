@@ -3,6 +3,7 @@ import { Parallax} from 'react-parallax';
 import { useEffect, useRef, useState } from "react";
 import Footer from './Footer';
 export default function LandingPage(){
+
     const sectionRef = useRef(null)
     const [inview, setInView] = useState(false)
 
@@ -19,12 +20,13 @@ export default function LandingPage(){
             if (sectionRef.current) observer.unobserve(sectionRef.current)
         }
     },[])
+
     return(
         <>
             <main>
             <Parallax strength={300}
-            bgImage="/images/street view 1.png" 
-            bgImageStyle={{objectFit: "cover", minWidth: "100%", minHeight: "100%", height: "auto"}}
+                bgImage="/images/street view 1.png" 
+                bgImageStyle={{objectFit: "cover", minWidth: "100%", minHeight: "100%", height: "auto"}}
             >
                 <div className="relative  flex w-full h-[100vh] overflow-hidden ">
 
@@ -36,14 +38,14 @@ export default function LandingPage(){
                 </div>
             </Parallax>
 
-             <div className=" w-full px-10 py-10 h-[50vh] flex flex-col justify-center">
-                 <h1 className=" w-[70%] text-[64px] font-[400] tracking-wider">
+             <div className=" w-full px-10  py-10 h-[20vh] lg:h-[20vh] flex flex-col justify-center">
+                 <h1 className=" xl:w-[70%] text-2xl lg:text-[64px] font-[400] tracking-wider">
                      THE TALLEST RESIDENTIAL BUILDING IN IKEJA GRA
                  </h1>
              </div>
 
-            <div ref={sectionRef} className={`transition-transform duration-700 ease-out w-full h-[100vh]  flex items-center justify-center ${inview ? "scale-110" : "scale-95"}`}>
-                <div className={` gap-8 p-12 w-[60%] h-[90%] flex`} >
+            <div ref={sectionRef} className={`transition-transform duration-700 ease-out w-full lg:h-[100vh]  flex items-center justify-center ${inview ? "scale-110" : "scale-95"}`}>
+                <div className="gap-8 p-12 w-[60%] h-[90%] flex flex-wrap lg:flex-nowrap" >
                     <span className=" flex-[65%] overflow-hidden">
                         <img  className=" object-cover object-center min-h-full min-w-full " src="/images/TA penthouse 2 dry kitchen dining 1.png" alt="" />
                     </span>
@@ -58,13 +60,13 @@ export default function LandingPage(){
                 bgImageStyle={{objectFit: "cover", minWidth: "100%", minHeight: "100%", height: "auto"}}
             >
                 <div className="relative  flex w-full h-[100vh] overflow-hidden ">
-                    <span className='absolute right-0 text-[55px] text-white bottom-0 w-[40%] font-[400]'>
+                    <span className='absolute right-0 text-3xl lg:text-[55px] text-white bottom-0 w-[40%] font-[400]'>
                         REVEALNG A GEM NESTlED IN MODERNITY
                     </span>
                 </div>
             </Parallax>
 
-            <p className='flex justify-center w-full py-[70px] text-3xl text-center font-[400]'>
+            <p className='flex justify-center w-full py-[70px] text-2xl lg:text-3xl text-center font-[400]'>
                 <span className=' w-[70%] font-[400]' >
                     BREATHTAKING CITY VIEWS AND SXPANSIVE CEILINGS GRACE EACH ROOM COMBINING SCALE WITH CONTEMPORARY LIVING
                 </span>
@@ -74,7 +76,7 @@ export default function LandingPage(){
                 <img className=' object-cover min-h-full min-w-full' src="/images/TA maissonetteliving room double volume 4.png" alt="" />
             </div>
 
-            <div className=' flex w-full h-[100vh] p-16 my-[100px] bg-[#f0eeea] overflow-hidden'>
+            <div className=' flex w-full h-[100vh] p-16 my-12 lg:my-[100px] bg-[#f0eeea] overflow-hidden'>
                 <div className='grid-layout grid flex-1 rounded-xl overflow-hidden'>
                     <div className='item-1'>
                         <img src="/images/TA maisonette master bathroom 1.png" alt="" />
@@ -91,7 +93,7 @@ export default function LandingPage(){
 
             {/* the golf guy */}
 
-            <div className=' flex h-[100vh] overflow-hidden p-12'>
+            <div className=' flex max-h-[100vh] overflow-hidden p-12'>
                 <div className='flex-[40%] h-full rounded-xl overflow-hidden'>
                     <img className=' object-cover min-h-full min-w-full' src="/images/golfMan.png" alt="" />
                 </div>

@@ -6,7 +6,7 @@ export default function SlideShow(){
         setShowImage(newImage)
     }
     return(
-        <section className="flex flex-col w-full max-h-[100vh] mb-[100px] gap-10 p-10 items-center">
+        <section className="flex flex-col w-full max-h-[100vh] mb:20px lg:mb-[100px] gap-10 p-6 lg:p-10 items-center">
             <p className="flex text-3xl font-[400] ">
                 UNIQUE BLEND OF EXCLUSIVITY AND TRANQUILITY
             </p>
