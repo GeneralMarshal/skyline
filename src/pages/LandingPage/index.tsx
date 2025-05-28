@@ -63,13 +63,13 @@ export default function LandingPage(){
                 bgImageStyle={{objectFit: "cover", minWidth: "100%", minHeight: "100%", height: "auto"}}
             >
                 <div className="relative  flex w-full h-[100vh] overflow-hidden ">
-                    <span className='absolute right-0  text-2xl md:text-3xl lg:text-[55px] text-white font-[julius] bottom-0 w-[40%] font-[400]'>
+                    <span className='absolute right-0  text-lg md:text-3xl lg:text-[55px] text-white font-[julius] bottom-0 w-[40%] font-[400]'>
                         REVEALNG A GEM NESTlED IN MODERNITY
                     </span>
                 </div>
             </Parallax>
 
-            <p className='flex justify-center w-full px-4 py-14 lg:py-[70px] text-lg md:text-xl lg:text-3xl text-center font-[400]'>
+            <p className='flex justify-center w-full px-4 py-14 lg:py-[70px] text-md md:text-xl lg:text-3xl text-center font-[400]'>
                 <span className=' lg:w-[70%] font-[400] font-[julius]'  >
                     BREATHTAKING CITY VIEWS AND SXPANSIVE CEILINGS GRACE EACH ROOM COMBINING SCALE WITH CONTEMPORARY LIVING
                 </span>
@@ -101,10 +101,10 @@ export default function LandingPage(){
                     <img className=' object-cover min-h-full min-w-full' src="/images/golfMan.png" alt="" />
                 </div>
                 <div className='flex-[60%] flex flex-col items-center px-6 mt-2 md:mt-4 lg:mt-10'>
-                    <p className=' lg:w-[70%] text-xl md:text-2xl lg:text-3xl font-[400]  mb-2 md:mb-4 lg:mb-8 font-[julius]'>
+                    <p className=' lg:w-[70%] text-md md:text-2xl lg:text-3xl font-[400]  mb-2 md:mb-4 lg:mb-8 font-[julius]'>
                         A CELEBRATION OF THE HIGHEST STANDARDS OF LIVING
                     </p>
-                    <p className='  lg:w-[70%] text-sm md:text-xl lg:text-2xl'>The Skyline Towers provides the scenery of a metropolis nestled in the flare of GRA's historic affluent and green neighbourhood.</p>
+                    <p className='  lg:w-[70%] text-xs md:text-xl lg:text-2xl'>The Skyline Towers provides the scenery of a metropolis nestled in the flare of GRA's historic affluent and green neighbourhood.</p>
                 </div>
             </div>
 
