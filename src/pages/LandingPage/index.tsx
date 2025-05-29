@@ -6,11 +6,20 @@ import Modal from './Modal';
 export default function LandingPage(){
 
     const [showModal, setShowModal] = useState<boolean>(false)
+    const [scrolled, setScrolled] = useState<boolean>(false)
+    const [showIcon, setShowIcon] = useState<boolean>(true)
 
     const sectionRef = useRef(null)
     const [inview, setInView] = useState(false)
 
+    function onScroll(){
+        setScrolled(window.scrollY > 50)
+        setShowIcon( window.scrollY < window.innerHeight)
+
+    }
+    
     useEffect(()=>{
+        // this for the zoom in function
         const observer = new IntersectionObserver(
             ([entry]) => {
                 setInView(entry.isIntersecting)
@@ -24,40 +33,51 @@ export default function LandingPage(){
         }
     },[])
 
+    useEffect(()=>{
+        // this for the top animation
+        window.addEventListener("scroll", onScroll)
+        return ()=> window.removeEventListener("scroll", onScroll)
+    })
+
     return(
         <>
-            <main>
-            <Parallax strength={300}
-                bgImage="/images/street view 1.png" 
-                bgImageStyle={{objectFit: "cover", minWidth: "100%", minHeight: "100%", height: "auto"}}
-            >
-                <div className="relative  flex w-full h-[100vh] overflow-hidden ">
+            <header className=' z-0'>
+                <Parallax strength={300}
+                    bgImage="/images/street view 1.png" 
+                    bgImageStyle={{objectFit: "cover", minWidth: "100%", minHeight: "100%", height: "auto"}}
+                >
+                    <div className="icon-containter flex w-full h-[100vh] p-10 overflow-hidden ">
 
-                    <img 
-                        className=" absolute w-[60%] z-10 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] " 
-                        src="/icons/Investor's narrative 1.svg" 
-                        alt="investors narrative" 
-                    />
+                        <img 
+                            className={`${ scrolled ? "icon-animate-scrolled" : "icon-animate"} fixed m-8 md:m-10 lg:m-16 ` }
+                            style={{
+                                display: showIcon ? "block" : "none"
+                            }}
+                            src="/icons/Investor's narrative 1.svg" 
+                            alt="investors narrative" 
+                        />
+                    </div>
+                </Parallax>
+            </header>
+            <main className='z-10'>
+                {/* tallest section */}
+                <div className=" w-full px-10  py-10 h-[20vh] lg:h-[20vh] flex flex-col justify-center">
+                    <h1 className=" md:w-[80%] text-2xl md:text-4xl lg:text-5xl font-[400] font-[julius] tracking-wider">
+                        THE TALLEST RESIDENTIAL BUILDING IN IKEJA GRA
+                    </h1>
                 </div>
-            </Parallax>
-
-             <div className=" w-full px-10  py-10 h-[20vh] lg:h-[20vh] flex flex-col justify-center">
-                 <h1 className=" md:w-[80%] text-2xl md:text-4xl lg:text-5xl font-[400] font-[julius] tracking-wider">
-                     THE TALLEST RESIDENTIAL BUILDING IN IKEJA GRA
-                 </h1>
-             </div>
-
-            <div ref={sectionRef} className={`transition-transform duration-700 mb-10 ease-out w-full lg:h-[100vh]  flex items-center justify-center ${inview ? "scale-110" : "scale-95"}`}>
-                <div className="gap-4 lg:gap-8 p-8 lg:p-12 w-[60%] h-[90%] flex flex-wrap lg:flex-nowrap" >
-                    <span className=" flex-[65%] overflow-hidden">
-                        <img  className=" object-cover object-center min-h-full min-w-full " src="/images/TA penthouse 2 dry kitchen dining 1.png" alt="" />
-                    </span>
-                    <span className=" flex-[35%] h-[60%]">
-                    <img  className=" object-cover object-center min-h-full min-w-full " src="/images/Picture → 1729154318-home-2.jpg.png" alt="" />
-                    </span>
+                <div ref={sectionRef} className={`transition-transform duration-700 mb-10 ease-out w-full lg:h-[100vh]  flex items-center justify-center ${inview ? "scale-110" : "scale-95"}`}>
+                    <div className="gap-4 lg:gap-8 p-8 lg:p-12 w-[60%] h-[90%] flex flex-wrap lg:flex-nowrap" >
+                        <span className=" flex-[65%] overflow-hidden">
+                            <img  className=" object-cover object-center min-h-full min-w-full " src="/images/TA penthouse 2 dry kitchen dining 1.png" alt="" />
+                        </span>
+                        <span className=" flex-[35%] h-[60%]">
+                        <img  className=" object-cover object-center min-h-full min-w-full " src="/images/Picture → 1729154318-home-2.jpg.png" alt="" />
+                        </span>
+                    </div>
                 </div>
-            </div>
 
+            {/* golf course section */}
             <Parallax strength={600}
                 bgImage="/images/unsplash_buGdVvTxJ38.png" 
                 bgImageStyle={{objectFit: "cover", minWidth: "100%", minHeight: "100%", height: "auto"}}
@@ -69,6 +89,7 @@ export default function LandingPage(){
                 </div>
             </Parallax>
 
+            {/* photo grid section */}
             <p className='flex justify-center w-full px-4 py-14 lg:py-[70px] text-md md:text-xl lg:text-3xl text-center font-[400]'>
                 <span className=' lg:w-[70%] font-[400] font-[julius]'  >
                     BREATHTAKING CITY VIEWS AND SXPANSIVE CEILINGS GRACE EACH ROOM COMBINING SCALE WITH CONTEMPORARY LIVING
@@ -91,6 +112,8 @@ export default function LandingPage(){
                     </div>
                 </div>
             </div>
+
+            {/* slideshow section */}
 
             <SlideShow/>
 
