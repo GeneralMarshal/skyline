@@ -13,7 +13,7 @@ export default function LandingPage(){
     const [inview, setInView] = useState(false)
 
     function onScroll(){
-        setScrolled(window.scrollY > 50)
+        setScrolled(window.scrollY > 10)
         setShowIcon( window.scrollY < window.innerHeight)
 
     }
@@ -49,7 +49,7 @@ export default function LandingPage(){
                     <div className="icon-containter flex w-full h-[100vh] p-10 overflow-hidden ">
 
                         <img 
-                            className={`${ scrolled ? "icon-animate-scrolled" : "icon-animate"} fixed m-8 md:m-10 lg:m-16 ` }
+                            className={`${ scrolled ? "icon-animate-scrolled" : "icon-animate"} fixed p-8 md:p-10 lg:p-16 ` }
                             style={{
                                 display: showIcon ? "block" : "none"
                             }}
@@ -66,7 +66,7 @@ export default function LandingPage(){
                         THE TALLEST RESIDENTIAL BUILDING IN IKEJA GRA
                     </h1>
                 </div>
-                <div ref={sectionRef} className={`transition-transform duration-700 mb-10 ease-out w-full lg:h-[100vh]  flex items-center justify-center ${inview ? "scale-110" : "scale-95"}`}>
+                <div ref={sectionRef} className={`transition-transform duration-700 mb-10 ease-out w-full lg:h-[100vh]  flex items-center justify-center ${inview ? "scale-120" : "scale-95"}`}>
                     <div className="gap-4 lg:gap-8 p-8 lg:p-12 w-[60%] h-[90%] flex flex-wrap lg:flex-nowrap" >
                         <span className=" flex-[65%] overflow-hidden">
                             <img  className=" object-cover object-center min-h-full min-w-full " src="/images/TA penthouse 2 dry kitchen dining 1.png" alt="" />
@@ -92,7 +92,7 @@ export default function LandingPage(){
             {/* photo grid section */}
             <p className='flex justify-center w-full px-4 py-14 lg:py-[70px] text-md md:text-xl lg:text-3xl text-center font-[400]'>
                 <span className=' lg:w-[70%] font-[400] font-[julius]'  >
-                    BREATHTAKING CITY VIEWS AND SXPANSIVE CEILINGS GRACE EACH ROOM COMBINING SCALE WITH CONTEMPORARY LIVING
+                    BREATHTAKING CITY VIEWS AND EXPANSIVE CEILINGS GRACE EACH ROOM COMBINING SCALE WITH CONTEMPORARY LIVING
                 </span>
             </p>
 
@@ -133,8 +133,8 @@ export default function LandingPage(){
 
             {/* autoplay background video */}
 
-            <div className=' h-[100vh] mt-40 mb-12'>
-                <video className="object-cover w-full h-full" src="/videos/skyline-video.mp4" autoPlay muted loop></video>
+            <div className=' h-auto mt-16 lg:mt-22 mb-12 lg:mb-18'>
+                <video className="object-cover w-full max-h-full" src="/videos/skyline-video.mp4" autoPlay muted loop></video>
             </div>
         </main>
         <section className='flex w-full justify-center flex-wrap md:flex-nowrap'>
