@@ -134,7 +134,7 @@ export default function LandingPage(){
             {/* autoplay background video */}
 
             <div className=' h-auto mt-16 lg:mt-22 mb-12 lg:mb-18'>
-                <video className="object-cover w-full max-h-full" src="/videos/skyline-video.mp4" autoPlay muted loop></video>
+                <video className="object-cover w-full max-h-full" src="/videos/skyline-video.mp4" autoPlay muted loop playsInline></video>
             </div>
         </main>
         <section className='flex w-full justify-center flex-wrap md:flex-nowrap'>
