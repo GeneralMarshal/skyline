@@ -5,6 +5,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 80%;
+    transition: 0.7s ease, top 0.7s ease, left 0.7s ease;
 }
 .icon-animate-scrolled{
     position: fixed;

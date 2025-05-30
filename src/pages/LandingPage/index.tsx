@@ -11,10 +11,11 @@ export default function LandingPage(){
 
     const sectionRef = useRef(null)
     const [inview, setInView] = useState(false)
+    const hasAnimated = useRef(false);
 
     function onScroll(){
         setScrolled(window.scrollY > 10)
-        setShowIcon( window.scrollY < window.innerHeight)
+        setShowIcon( window.scrollY < window.innerHeight - (window.innerHeight * 0.3))
 
     }
     
@@ -22,10 +23,13 @@ export default function LandingPage(){
         // this for the zoom in function
         const observer = new IntersectionObserver(
             ([entry]) => {
-                setInView(entry.isIntersecting)
+              if (entry.isIntersecting && !hasAnimated.current) {
+                setInView(true);
+                hasAnimated.current = true;
+              }
             },
-            {threshold: 0.6}
-        )
+            { threshold: 0.5 }
+          );
 
         if(sectionRef.current) observer.observe(sectionRef.current)
         return () =>{
@@ -66,7 +70,7 @@ export default function LandingPage(){
                         THE TALLEST RESIDENTIAL BUILDING IN IKEJA GRA
                     </h1>
                 </div>
-                <div ref={sectionRef} className={`transition-transform duration-700 mb-10 ease-out w-full lg:h-[100vh]  flex items-center justify-center ${inview ? "scale-120" : "scale-95"}`}>
+                <div ref={sectionRef} className={`transition-transform duration-700 mb-10 ease-out w-full lg:h-[100vh]  flex items-center justify-center will-change-transform origin-center ${inview ? "scale-120" : "scale-95"}`}>
                     <div className="gap-4 lg:gap-8 p-8 lg:p-12 w-[60%] h-[90%] flex flex-wrap lg:flex-nowrap" >
                         <span className=" flex-[65%] overflow-hidden">
                             <img  className=" object-cover object-center min-h-full min-w-full " src="/images/TA penthouse 2 dry kitchen dining 1.png" alt="" />
