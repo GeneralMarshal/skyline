@@ -19,23 +19,20 @@ export default function LandingPage(){
 
     }
     
-    useEffect(()=>{
-        // this for the zoom in function
+    useEffect(() => {
         const observer = new IntersectionObserver(
-            ([entry]) => {
-              if (entry.isIntersecting && !hasAnimated.current) {
-                setInView(true);
-                hasAnimated.current = true;
-              }
-            },
-            { threshold: 0.5 }
-          );
-
-        if(sectionRef.current) observer.observe(sectionRef.current)
-        return () =>{
-            if (sectionRef.current) observer.unobserve(sectionRef.current)
-        }
-    },[])
+          ([entry]) => {
+            setInView(entry.isIntersecting); 
+          },
+          { threshold: 0.5 }
+        );
+      
+        if (sectionRef.current) observer.observe(sectionRef.current);
+      
+        return () => {
+          if (sectionRef.current) observer.unobserve(sectionRef.current);
+        };
+      }, []);
 
     useEffect(()=>{
         // this for the top animation
@@ -65,12 +62,12 @@ export default function LandingPage(){
             </header>
             <main className='z-10'>
                 {/* tallest section */}
-                <div className=" w-full px-10  py-10 h-[20vh] lg:h-[20vh] flex flex-col justify-center">
+                <div  className=" w-full px-10  py-10 h-[20vh] lg:h-[20vh] flex flex-col justify-center">
                     <h1 className=" md:w-[80%] text-2xl md:text-4xl lg:text-5xl font-[400] font-[julius] tracking-wider">
                         THE TALLEST RESIDENTIAL BUILDING IN IKEJA GRA
                     </h1>
                 </div>
-                <div ref={sectionRef} className={`transition-transform duration-700 mb-10 ease-out w-full lg:h-[100vh]  flex items-center justify-center will-change-transform origin-center ${inview ? "scale-120" : "scale-95"}`}>
+                <div ref={sectionRef}  className={`transition-transform duration-700 mb-10 ease-out w-full lg:h-[100vh]  flex items-center justify-center will-change-transform origin-center ${inview ? "scale-105" : "scale-95"}`}>
                     <div className="gap-4 lg:gap-8 p-8 lg:p-12 w-[60%] h-[90%] flex flex-wrap lg:flex-nowrap" >
                         <span className=" flex-[65%] overflow-hidden">
                             <img  className=" object-cover object-center min-h-full min-w-full " src="/images/TA penthouse 2 dry kitchen dining 1.png" alt="" />
