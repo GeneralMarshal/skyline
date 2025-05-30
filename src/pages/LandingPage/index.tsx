@@ -11,7 +11,6 @@ export default function LandingPage(){
 
     const sectionRef = useRef(null)
     const [inview, setInView] = useState(false)
-    const hasAnimated = useRef(false);
 
     function onScroll(){
         setScrolled(window.scrollY > 10)
