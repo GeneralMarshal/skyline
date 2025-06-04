@@ -12,7 +12,7 @@ export default function SlideShow(){
             </p>
             <div className="flex flex-1 w-full items-start">
                 <div className=" flex-[40%]">
-                    <ul className="show-options text-xs md:text-lg lg:text-2xl md:leading-10 lg:leading-15 ">
+                    <ul className="show-options text-xs md:text-lg lg:text-2xl font-[300] leading-5 md:leading-10 lg:leading-15 ">
                         <li onMouseEnter={()=>handleImage("study")} className=" cursor-pointer ">STUDY</li>
                         <li onMouseEnter={()=>handleImage("pool")} className=" cursor-pointer " >SWIMMING POOL</li>
                         <li onMouseEnter={()=>handleImage("playground")} className=" cursor-pointer " >KIDS PLAYGROUND</li>
@@ -22,7 +22,7 @@ export default function SlideShow(){
 
                     </ul>
                 </div>
-                <div className=" flex-[60%] w-full h-full overflow-hidden rounded-md md:rounded-xl transition ease-in duration-100 ">
+                <div className=" flex-[60%] w-full h-full overflow-hidden rounded-sm md:rounded-lg transition ease-in duration-100 ">
                     <img key={showImage} className="fade-image object-cover min-h-full min-w-full" src={showImage} alt="" />
                 </div>
             </div>
