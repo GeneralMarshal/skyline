@@ -2,10 +2,10 @@ import SlideShow from './SlideShow';
 import { Parallax} from 'react-parallax';
 import { useEffect, useRef, useState } from "react";
 import Footer from './Footer';
-import Modal from './Modal';
+// import Modal from './Modal';
 export default function LandingPage(){
 
-    const [showModal, setShowModal] = useState<boolean>(false)
+    // const [showModal, setShowModal] = useState<boolean>(false)
     const [scrolled, setScrolled] = useState<boolean>(false)
     const [showIcon, setShowIcon] = useState<boolean>(true)
 
@@ -62,13 +62,13 @@ export default function LandingPage(){
                             style={{
                                 display: showIcon ? "block" : "none"
                             }}
-                            src="/icons/Investor's narrative 1.svg" 
-                            alt="investors narrative" 
+                            src="/images/skyline-new.png" 
+                            alt="The Skyline Towers by VIAGEM" 
                         />
                     </div>
                 </Parallax>
             </header>
-            <main className='z-10 bg-[#f1f0ec]'>
+            <main className='relative z-10 bg-[#f1f0ec]'>
                 {/* tallest section */}
                 <Parallax strength={600} lazy>
                     <div  className="w-full px-4 md:px-10 py-12 md:py-22 lg:py-32 h-[20vh] lg:h-[20vh] flex flex-col justify-center">
@@ -151,8 +151,8 @@ export default function LandingPage(){
             </div>
         </main>
         <section className='flex w-full justify-center flex-wrap md:flex-nowrap'>
-            <Footer showModal={showModal} setShowModal={setShowModal}/>
-            {showModal && <Modal/>}
+            <Footer />
+            {/* {showModal && <Modal/>} */}
         </section>
         </>
             
