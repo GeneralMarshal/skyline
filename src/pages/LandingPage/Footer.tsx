@@ -18,9 +18,9 @@ export default function Footer(){
             target="_blank"
             rel="noreferrer"
             aria-label="WhatsApp"
-            className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-[#7C7262] bg-[#F1F0EC] text-[#7C7262] shadow-md hover:bg-[#7C7262] hover:text-white"
+            className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full border border-[#7C7262] bg-[#F1F0EC] text-[#7C7262] shadow-md hover:bg-[#7C7262] hover:text-white"
         >
-            <FaWhatsapp />
+            <FaWhatsapp className="text-2xl" />
         </a>
         <footer className=" bg-[#F1F0EC] w-full py-10 px-12">
             <p className="text-xl md:text-3xl tracking-widest font-[julius]">ENQUIRE NOW</p>
