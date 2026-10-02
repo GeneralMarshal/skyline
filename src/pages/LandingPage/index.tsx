@@ -134,7 +134,7 @@ export default function LandingPage(){
 
             <div className=' flex max-h-[100vh] overflow-hidden p-6 lg:p-12'>
                 <div className='flex-[40%] h-full rounded-sm mg:rounded-lg overflow-hidden'>
-                    <img className=' object-cover min-h-full min-w-full' src="/images/golfMan.png" alt="" />
+                    <img className=' object-cover min-h-full min-w-full' src="/images/golf-tower.png" alt="" />
                 </div>
                 <div className='flex-[60%] flex flex-col items-center px-4 md:px-6 mt-2 md:mt-4 lg:mt-10'>
                     <p className=' lg:w-[70%] text-md md:text-2xl lg:text-3xl font-[400]  mb-2 md:mb-4 lg:mb-8 font-[julius]'>
